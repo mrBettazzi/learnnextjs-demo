@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch'
 
 const Index = (props) => (
   <Layout>
-    <h1>Batman TV Shows</h1>
+    <h1>TV Shows from TV Maze REST service</h1>
     <ul>
       {props.shows.map(({show}) => (
         <li key={show.id}>
@@ -18,7 +18,7 @@ const Index = (props) => (
 )
 
 Index.getInitialProps = async function() {
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=casino')
+  const res = await fetch('https://api.tvmaze.com/search/shows?q=aretha')
   const data = await res.json()
 
   console.log(`Show data fetched. Count: ${data.length}`)
